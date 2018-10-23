@@ -1,0 +1,32 @@
+{
+    "name": "michelangelomo/model-activity-laravel",
+    "description": "Log activity of your eloquent model",
+    "type": "library",
+    "keywords": ["laravel","laravel-utility","laravel5-package","PHP","laravel5"],
+    "homepage": "https://github.com/michelangelomo/model-activity-laravel",
+    "authors": [
+        {
+            "name": "Michelangelo",
+            "email": "michelangelo@morrillo.it"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "laravel/framework":"~5.3"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Michelangelo\\ModelActivity\\ModelActivityServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Michelangelo\\ModelActivity\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
