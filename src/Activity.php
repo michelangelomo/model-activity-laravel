@@ -14,4 +14,16 @@ abstract class Activity {
 
     public const FORCE_DELETED = 5;
 
+    public static $status = [
+        self::CREATED,
+        self::UPDATED,
+        self::DELETED,
+        self::RESTORED,
+        self::FORCE_DELETED
+    ];
+
+    public static function inStatus(int $type) : bool {
+        return (in_array($type, self::$status));
+    }
+
 }
