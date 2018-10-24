@@ -98,6 +98,7 @@ class ModelObserver {
         (Schema::hasColumn('model_activities', 'user_id')) ? $activity->user_id = $this->getCurrentUserId() : null;
         $activity->differences = $this->getModelDifferences($model);
         $activity->transaction_type = $type;
+        $activity->extra = serialize($model->getEventData());
         $activity->save();
         return $activity;
     }

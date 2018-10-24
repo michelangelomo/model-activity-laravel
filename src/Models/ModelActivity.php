@@ -17,4 +17,8 @@ class ModelActivity extends Model {
     public function differences() : array {
         return unserialize($this->differences);
     }
+
+    public function extra() : array {
+        return unserialize($this->extra);
+    }
 }

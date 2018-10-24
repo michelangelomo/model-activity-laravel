@@ -25,8 +25,26 @@ trait HasActivity {
 
         return ModelActivity::where('transaction_type', $type)
             ->where('model_type', get_class($this))
-            ->where('model_id', $this->id)
+            ->where('model_id', $this->id())
             ->get();
+    }
+
+    public $eventData = [];
+
+    /**
+     * Get the event data by event
+     *
+     * @return array|NULL
+     */
+    public function getEventData() : array {
+        return $this->eventData;
+    }
+
+    /**
+     * @param array $eventData
+     */
+    public function setEventData(array $eventData) : void {
+        $this->eventData = $eventData;
     }
 
 }
