@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModelActivitesTable extends Migration
+class CreateModelActivitiesTable extends Migration
 {
     /**
      * Run the Database.
@@ -20,6 +20,8 @@ class CreateModelActivitesTable extends Migration
             $table->unsignedInteger('transaction_type');
 
             $table->longText('differences');
+
+            $table->longText('extra')->nullable();
 
             if(Schema::hasTable('users')) {
                 $table->unsignedInteger('user_id')->nullable();

@@ -11,7 +11,7 @@ class ModelActivity extends Model {
     protected $fillable = ['model_type', 'model_id', 'transaction_type', 'data', 'user_id'];
 
     public function user() {
-        return $this->morphTo();
+        return $this->morphTo('model');
     }
 
     public function differences() : array {
